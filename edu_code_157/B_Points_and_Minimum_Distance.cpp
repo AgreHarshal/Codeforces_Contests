@@ -1,6 +1,3 @@
-
-
-//git remote set-url origin https://AgreHarshal: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@github.com/AgreHarshal/Codeforces_Contests.git
 #include <bits/stdc++.h>
 using namespace std;
 #define int long long
@@ -22,13 +19,22 @@ void solve()
 {
    int n;
    cin>>n;
-   if(n%3==1 || n%3==2){
-    cout<<"First"<<endl;
-   }else{
-    cout<<"Second"<<endl;
+   vector<int>arr(2*n);
+   for(int i=0;i<2*n;i++){
+    cin>>arr[i];
    }
-   
-   
+   sort(arr.begin(),arr.end());
+   int res=0;
+   for(int i=0;i<n-1;i++){
+    res+=(arr[i+1]-arr[i]);
+   }
+   for(int i=n;i<2*n-1;i++){
+    res+=(arr[i+1]-arr[i]);
+   }
+   cout<<res<<endl;
+   for(int i=0;i<n;i++){
+    cout<<arr[i]<<" "<<arr[2*n-1-i]<<endl;
+   }
 }
 int32_t main()
 {

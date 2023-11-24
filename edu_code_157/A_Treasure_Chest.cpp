@@ -1,6 +1,3 @@
-
-
-//git remote set-url origin https://AgreHarshal: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@github.com/AgreHarshal/Codeforces_Contests.git
 #include <bits/stdc++.h>
 using namespace std;
 #define int long long
@@ -20,12 +17,16 @@ int lcm(int a, int b)
 }
 void solve()
 {
-   int n;
-   cin>>n;
-   if(n%3==1 || n%3==2){
-    cout<<"First"<<endl;
+   int x,y,k;
+   cin>>x>>y>>k;
+   if(y<x){
+    cout<<(x)<<endl;
    }else{
-    cout<<"Second"<<endl;
+    if(x+k<y){
+        cout<<x+k+2*(y-(x+k))<<endl;
+    }else{
+        cout<<y<<endl;
+    }
    }
    
    
